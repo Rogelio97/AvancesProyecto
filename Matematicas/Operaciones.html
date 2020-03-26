@@ -1,0 +1,60 @@
+<!DOCTYPE htm1>
+<html> 
+<head> 
+<title>Calculadora</title> 
+<meta charset="utf-8"> 
+<script type="text/javascript">
+var num, acc =0, op ="";
+
+function mas() {acc=num.value; op ="+";}
+function menos() {acc=num.value; op ="-";}
+function multi() {acc=num.value; op ="*";}
+function div() {acc=num.value; op ="/";}
+function potencia() {acc=num.value; op ="´";}
+function cuadrado() {acc=num.value; op ="x2";}
+function inverso() {acc=num.value; op ="1/x";}
+
+function raiz() {acc=num.value; op ="raiz";}
+function parteentera() {acc=num.value; op ="entera";}
+
+
+function calcular(){
+
+
+if(op === "+"){num.value =(+acc + +num.value)}
+if(op === "-"){num.value =(+acc - +num.value)}
+if(op === "*"){num.value =(+acc * +num.value)}
+if(op === "/"){num.value =(+acc / +num.value)}
+if(op === "´"){num.value =(Math.pow(acc, num.value))}
+if(op === "x2"){num.value =(+num.value * +num.value)}
+if(op === "1/x"){num.value =(+1 / +num.value)}
+
+if(op === "raiz"){num.value =(Math.sqrt(num.value))}
+if(op === "entera"){num.value =(Math.trunc(num.value))}
+}
+
+function inic(){num = document.getElementById("num");}
+function vaciar(){num.value="";}
+
+
+</script> 
+</head>
+
+<body onload="inic()">
+  <h1>Bienvenidos a la calculadora</h1>
+  Numero:<p>
+   <input type="text" size="12" id="num" onclick="vaciar()"> <button onclick="calcular()"> = </button> <p>
+
+<button onclick="mas()"> + </button>
+<button onclick="menos()"> - </button>
+<button onclick="multi()"> * </button>
+<button onclick="div()"> / </button>
+<button onclick="potencia()"> x´y </button>
+
+<p>
+<button onclick="cuadrado()"> x<sup>2</sup> </button>
+<button onclick="inverso()"> 1/x </button>
+<button onclick="raiz()"> Raiz(x) </button>
+<button onclick="parteentera()"> Parte entera(x) </button>
+</body> 
+</html> 
